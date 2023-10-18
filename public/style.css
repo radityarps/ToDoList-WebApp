@@ -16,19 +16,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-main {
-  height: 90vh;
-  background-color: var(--main-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
+/*Header Section*/
 header {
   height: 10vh;
   padding: 10px;
-  background-color: var(--secondary-color);
+  background-color: var(--third-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,11 +32,64 @@ nav ul {
 }
 nav a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 2rem;
 }
 nav li {
+  display: flex;
   padding: 5px;
-  border: 1px solid var(--dark-color);
-  border-radius: 5px;
+  border-bottom: 5px solid var(--main-color);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/*Main Section*/
+main {
+  height: 90vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.title {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.tableList {
+  background-color: var(--main-color);
+  padding: 20px;
+  max-height: 60%;
+  width: 35vw;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+}
+.items {
+  display: flex;
+  margin: 20px;
+  font-size: 20px;
+  gap: 10px;
+}
+.items input {
+  width: 15px;
+}
+
+/*Footer Section*/
+footer {
+  display: flex;
+  background-color: var(--third-color);
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  color: white;
+}
+footer a {
+  text-decoration: none;
+  color: black;
 }
