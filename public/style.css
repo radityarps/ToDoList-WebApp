@@ -34,14 +34,18 @@ nav a {
   text-decoration: none;
   color: var(--dark-color);
   font-size: 1.4rem;
+  font-weight: 600;
+  transition: all 500ms;
 }
 nav li {
   display: flex;
   padding: 5px;
-  border-bottom: 5px solid var(--dark-color);
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+nav a:hover {
+  color: var(--third-color);
 }
 
 /*Main Section*/
@@ -97,10 +101,12 @@ form input {
   font-size: 30px;
   opacity: 0.7;
   text-align: center;
+  transition: all 500ms;
 }
 form input:focus {
   outline: none;
   font-size: 1.5rem;
+  border-bottom: 2px solid var(--third-color);
 }
 form button {
   width: 70px;
@@ -110,6 +116,11 @@ form button {
   font-size: 3rem;
   border: none;
   color: white;
+  transition: all 500ms;
+}
+form button:hover {
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
 }
 
 /*Footer Section*/
@@ -124,5 +135,5 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: black;
+  color: var(--dark-color);
 }
