@@ -2,7 +2,7 @@
 
 <main>
       <div class="title">
-        <h1><%= dateOfToday %></h1>
+        <h1><%= title %></h1>
       </div>
       <div class="tableList">
         <div class="listItems">
@@ -23,7 +23,7 @@
             <p></p>
           </div>
         </div>
-        <form action="/" class="addItems">
+        <form action="/additem" class="addItems" method="post">
           <input type="text" name="newItem" placeholder="Input Text" required />
           <button type="submit" name="submitItem">+</button>
         </form>

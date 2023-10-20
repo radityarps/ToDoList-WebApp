@@ -7,23 +7,31 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+//Title
+const d = new Date;
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuesday", "Friday", "Saturday"];
+const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"]
+let title = {
+  "dateOfToday" :days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate(),
+"workList" : "Work List",
+};
+
+//Items List
+
 app.get("/", (req, res) => {
   res.redirect("/todoay");
 });
 
-const d = new Date;
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuesday", "Friday", "Saturday"];
-const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"]
-let dateOfToday = days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate();
-
 app.get("/todoay", (req, res) => {
-  res.render("index-todoay.ejs", {
-    dateOfToday: dateOfToday,
+  res.render("index.ejs", {
+    title: title.dateOfToday,
   });
 });
 
 app.get("/worklist", (req, res) => {
-  res.render("index-workList.ejs",);
+  res.render("index.ejs",{
+    title: title.workList,
+  });
 });
 
 app.listen(port, () => {
