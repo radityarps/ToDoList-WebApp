@@ -8,6 +8,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
+  res.redirect("/todoay");
+});
+
+app.get("/todoay", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.get("/worklist", (req, res) => {
   res.render("index.ejs");
 });
 

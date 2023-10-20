@@ -1,31 +1,32 @@
-<%- include("./partials/header.ejs") %>
+<%- include('partials/header.ejs') %>
+
 <main>
-  <div class="title">
-    <h1>Selasa, 17 Oktober</h1>
-  </div>
-  <div class="tableList">
-    <div class="listItems">
-      <div class="items">
-        <input type="checkbox" />
-        <p>test</p>
+      <div class="title">
+        <h1>Selasa, 17 Oktober</h1>
       </div>
-      <div class="items">
-        <input type="checkbox" />
-        <p>helloo</p>
+      <div class="tableList">
+        <div class="listItems">
+          <div class="items">
+            <input type="checkbox" />
+            <p>test</p>
+          </div>
+          <div class="items">
+            <input type="checkbox" />
+            <p>helloo</p>
+          </div>
+          <div class="items">
+            <input type="checkbox" />
+            <p></p>
+          </div>
+          <div class="items">
+            <input type="checkbox" />
+            <p></p>
+          </div>
+        </div>
+        <form action="/" class="addItems">
+          <input type="text" name="newItem" placeholder="Input Text" required />
+          <button type="submit" name="submitItem">+</button>
+        </form>
       </div>
-      <div class="items">
-        <input type="checkbox" />
-        <p></p>
-      </div>
-      <div class="items">
-        <input type="checkbox" />
-        <p></p>
-      </div>
-    </div>
-    <form action="/" class="addItems">
-      <input type="text" name="newItem" placeholder="Input Text" required />
-      <button type="submit" name="submitItem">+</button>
-    </form>
-  </div>
-</main>
-<%- include("./partials/footer.ejs") %>
+    </main>
+<%- include('partials/footer.ejs') %>
