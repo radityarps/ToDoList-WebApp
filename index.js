@@ -13,17 +13,17 @@ app.get("/", (req, res) => {
 
 const d = new Date;
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuesday", "Friday", "Saturday"];
-const month = ["December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"]
+const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"]
 let dateOfToday = days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate();
 
 app.get("/todoay", (req, res) => {
-  res.render("index.ejs", {
+  res.render("index-todoay.ejs", {
     dateOfToday: dateOfToday,
   });
 });
 
 app.get("/worklist", (req, res) => {
-  res.render("index.ejs");
+  res.render("index-workList.ejs",);
 });
 
 app.listen(port, () => {
