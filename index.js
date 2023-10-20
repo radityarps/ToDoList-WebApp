@@ -11,8 +11,15 @@ app.get("/", (req, res) => {
   res.redirect("/todoay");
 });
 
+const d = new Date;
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuesday", "Friday", "Saturday"];
+const month = ["December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"]
+let dateOfToday = days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate();
+
 app.get("/todoay", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    dateOfToday: dateOfToday,
+  });
 });
 
 app.get("/worklist", (req, res) => {
