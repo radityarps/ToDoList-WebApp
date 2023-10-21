@@ -53,6 +53,8 @@ app.get("/todoay", (req, res) => {
     title: title.dateOfToday,
     itemsData: itemsData.todayData,
     formAction: "/todoayForm",
+    todoayActive: "var(--third-color)",
+    worklistActive: "black",
   });
 });
 
@@ -61,6 +63,8 @@ app.get("/worklist", (req, res) => {
     title: title.workList,
     itemsData: itemsData.workData,
     formAction: "/worklistForm",
+    todoayActive: "black",
+    worklistActive: "var(--third-color)",
   });
 });
 

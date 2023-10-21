@@ -50,6 +50,10 @@ nav a:hover {
   color: var(--third-color);
 }
 
+.active {
+  color: var(--third-color);
+}
+
 /*Main Section*/
 main {
   min-height: 100vh;
@@ -70,6 +74,7 @@ main {
   font-size: 20px;
   border-radius: 8px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.5);
+  width: 35vw;
 }
 .tableList {
   background-color: var(--main-color);
@@ -90,13 +95,22 @@ main {
 }
 .items:hover {
   transform: scale(1.02);
-  cursor: pointer;
+  cursor: default;
 }
 .items p {
+  color: black;
   text-align: center;
+}
+.items input:checked + p {
+  color: var(--third-color);
+  text-decoration: line-through;
 }
 .items input {
   width: 20px;
+  accent-color: var(--third-color);
+}
+.items input:hover {
+  cursor: pointer;
 }
 form {
   display: flex;
@@ -158,6 +172,7 @@ footer a {
   }
   .title {
     font-size: 15px;
+    width: 70vw;
   }
   .tableList {
     width: 70vw;
@@ -177,6 +192,9 @@ footer a {
   main {
     padding: 20px 10px 20px 10px;
   }
+  .title {
+    width: 90vw;
+  }
   .tableList {
     width: 90vw;
   }
@@ -191,5 +209,11 @@ footer a {
   }
   form input:focus {
     font-size: 22px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 13px;
+    width: 90vw;
   }
 }
