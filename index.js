@@ -8,15 +8,41 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 //Title
-const d = new Date;
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thuesday", "Friday", "Saturday"];
-const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"]
+const d = new Date();
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thuesday",
+  "Friday",
+  "Saturday",
+];
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 let title = {
-  "dateOfToday" :days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate(),
-"workList" : "Work List",
+  dateOfToday:
+    days[d.getDay()] + ", " + month[d.getMonth()] + " " + d.getDate(),
+  workList: "Work List",
 };
 
 //Items List
+let itemsData = {
+  todayData: [],
+  workData: [],
+};
 
 app.get("/", (req, res) => {
   res.redirect("/todoay");
@@ -25,13 +51,29 @@ app.get("/", (req, res) => {
 app.get("/todoay", (req, res) => {
   res.render("index.ejs", {
     title: title.dateOfToday,
+    itemsData: itemsData.todayData,
+    formAction: "/todoayForm",
   });
 });
 
 app.get("/worklist", (req, res) => {
-  res.render("index.ejs",{
+  res.render("index.ejs", {
     title: title.workList,
+    itemsData: itemsData.workData,
+    formAction: "/worklistForm",
   });
+});
+
+app.post("/todoayForm", (req, res) => {
+  let userInput = req.body.newItem;
+  itemsData["todayData"].push(userInput);
+  res.redirect("/todoay");
+});
+
+app.post("/worklistForm", (req, res) => {
+  let userInput = req.body.newItem;
+  itemsData["workData"].push(userInput);
+  res.redirect("/worklist");
 });
 
 app.listen(port, () => {

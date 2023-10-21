@@ -1,32 +1,22 @@
 <%- include('partials/header.ejs') %>
 
 <main>
-      <div class="title">
-        <h1><%= title %></h1>
+  <div class="title">
+    <h1><%= title %></h1>
+  </div>
+  <div class="tableList">
+    <div class="listItems">
+      <% for(var i = 0; i < itemsData.length; i++) {%>
+      <div class="items">
+        <input type="checkbox" />
+        <p><%= itemsData[i] %></p>
       </div>
-      <div class="tableList">
-        <div class="listItems">
-          <div class="items">
-            <input type="checkbox" />
-            <p>test</p>
-          </div>
-          <div class="items">
-            <input type="checkbox" />
-            <p>helloo</p>
-          </div>
-          <div class="items">
-            <input type="checkbox" />
-            <p></p>
-          </div>
-          <div class="items">
-            <input type="checkbox" />
-            <p></p>
-          </div>
-        </div>
-        <form action="/additem" class="addItems" method="post">
-          <input type="text" name="newItem" placeholder="Input Text" required />
-          <button type="submit" name="submitItem">+</button>
-        </form>
-      </div>
-    </main>
+      <% } %>
+    </div>
+    <form action="<%= formAction %>" class="addItems" method="post">
+      <input type="text" name="newItem" placeholder="Input Text" required />
+      <button type="submit" name="submitItem">+</button>
+    </form>
+  </div>
+</main>
 <%- include('partials/footer.ejs') %>
