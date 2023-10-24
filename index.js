@@ -1,11 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
+import morgan from "morgan";
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":referrer" ":user-agent"'));
 
 //Title
 const d = new Date();
